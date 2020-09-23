@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function formvalidate(){
+            var name=document.getElementById('name').value;
+            var password=document.getElementById('password').value;
+            var email=document.getElementById('email').value;
+            var mobile=document.getElementById('mobile').value;
+
+            var nameList=['Santwana','Sweeta','Bany','Sandy','venu'];
+            
+            var nameLength=name.length;
+            var passwordLength=password.length;
+            var mobileLength=mobile.length;
+            var letters = /^[A-Za-z]+$/;
+            var number =/^[0-9]/;
+            if(!(name.match(letters)) || nameLength<5 || nameLength>15)
+            {
+                alert("Name cannot be empty or number or less than 3 or greater than 15");
+                document.getElementById('name').focus();
+            }
+            else if(!(password.match(letters))||!(password.match(number)))
+            {
+                alert("password invalid");
+                document.getElementById('password').focus();
+            }
+            else if(isNaN(mobile) || mobileLength!=10 )
+            {
+                alert("Phone number cannot be null or string and should be 10 digits");
+                document.getElementById('mobile').focus();
+            }
+         
+            else if(nameList.indexOf(name) !== -1 )
+            {
+                alert('user name exists');
+                document.getElementById('name').focus();
+            }
+            
+            else
+            {
+                document.getElementById("display").innerHTML="successfully registered";
+            }
+        }
+           
+            
+    </script>
+</head>
+<body>
+    <form  id="myform" >
+        User Name:<input type="text" id="name"><br>        
+        Password:<input type="password" id="password"><br><br>
+        E-mail:<input type="email" id="email" required><br><br>
+        Phone Number:<input type="text" id="mobile"><br><br>
+        <input type="button" value="register" onclick="formvalidate();" >
+
+    </form>
+</body>
+<div id="display"></div>
+</html>

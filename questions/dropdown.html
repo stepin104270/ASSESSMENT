@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>      
+    <script>
+        function mobile(){
+            var name = document.getElementById("List").value;
+            if(name == "Laptop")
+            {
+                var mobileName = ['lenovo','sony','hp','apple'];
+                document.getElementById("display").innerHTML = mobileName.join("<br>");
+            }
+            else if(name == "Movie")
+            {
+                var mobileName = ['Iphone','Samsung', 'Sony'];
+                document.getElementById("display").innerHTML = mobileName.join("<br>");
+            }
+            else if(name == "TV")
+            {
+                var mobileName = ['sony','parasonic'];
+                document.getElementById("display").innerHTML = mobileName.join("<br>");
+            }
+
+            
+        }
+    </script>
+</head>
+<body>   
+        <div>
+    Mobile <select name="list" id="List" onchange="mobile()">
+        <option>Select</option>
+        <option value="Laptop">Laptop</option>
+        <option value="Movie">Movie</option>
+        <option value="TV">TV</option>
+  
+    </select>
+    
+</div>
+<br>
+<div> <span id="display"></span></div>
+</body>
+</html>
