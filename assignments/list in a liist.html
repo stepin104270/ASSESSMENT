@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+    
+        
+</head>
+<body>
+    <h1>Choose from dropdown:</h1> 
+    <select id="select" onchange="action()";>
+        <option>Select</option>
+        <option value="LG<br>Samsung<br>Sony">TV</option>
+        <option value="Lenovo<br>HP<br>Dell<br>Acer">Laptop</option>
+        <option value="Samsung<br>Apple<br>Oneplus">Mobile</option>
+        <option value="Samsung<br>Microsoft<br>Apple">Tablet</option>
+
+    </select>
+    <p id="demo1"></p>
+    <script>
+        function action()
+        {
+            var i=document.getElementById("select");
+            var result=i.options[i.selectedIndex].value;
+            document.getElementById("demo1").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

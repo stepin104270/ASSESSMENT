@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            #demo1{
+                background-color:green;
+                color:rgb(255, 115, 0);
+            }
+        </style>
+        <script>
+            function Fun() {
+              var x = document.getElementById("name").value;
+              document.getElementById("demo1").innerHTML = x;
+            }
+            </script>
+            
+    </head>
+<body>
+
+Enter comment: <input type="text" id="name" onkeyup="Fun()">
+       <p>My comment: <span id="demo1"></span></p>
+
+
+</body>
+</html>
